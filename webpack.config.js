@@ -11,6 +11,6 @@ module.exports = {
   },
   output: {
     path: path.join(base_dir, "myCompany/static/build"),
-    filename: "[name].js"
+    filename: "js/[name].js"
   }
 };
