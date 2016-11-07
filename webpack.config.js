@@ -1,8 +1,7 @@
 "use strict";
 
 const path = require('path');
-let base_dir = path.join(__dirname, 'myCompany');
-
+const base_dir = path.join(__dirname, 'myCompany');
 
 module.exports = {
   context: path.join(base_dir, "myCompany/static/js/"),
@@ -12,5 +11,17 @@ module.exports = {
   output: {
     path: path.join(base_dir, "myCompany/static/build"),
     filename: "js/[name].js"
+  },
+
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules')
+  },
+
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      loader: 'babel'
+    }]
   }
 };
