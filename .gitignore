@@ -6,3 +6,4 @@ node_modules
 public
 **/build/**/*.js
 **/build/**/*.css
+**/locale/**/*.mo
