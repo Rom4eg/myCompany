@@ -2,6 +2,7 @@
 
 const path = require('path');
 const base_dir = path.join(__dirname, 'myCompany');
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   context: path.join(base_dir, "myCompany/static/js/"),
@@ -22,6 +23,16 @@ module.exports = {
       test: /\.js$/,
       exclude: /(node_modules)/,
       loader: 'babel'
+    },{
+      test: /\.sass$/,
+      exclude:/(node_modules)/,
+      loader: ExtractTextPlugin.extract('style', "css!sass")
     }]
-  }
+  },
+
+  plugins: [
+    new ExtractTextPlugin("css/[name].css", {
+      allChunks: true
+    }),
+  ]
 };
