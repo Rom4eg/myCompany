@@ -18,6 +18,11 @@ module.exports = {
     root: path.join(__dirname, 'node_modules')
   },
 
+  watch: true,
+  resolve:{
+    extensions: ['', '.js', '.sass']
+  },
+
   module: {
     loaders: [{
       test: /\.js$/,
@@ -26,7 +31,7 @@ module.exports = {
     },{
       test: /\.sass$/,
       exclude:/(node_modules)/,
-      loader: ExtractTextPlugin.extract('style', "css!sass")
+      loader: ExtractTextPlugin.extract('style-loader', "css-loader!sass-loader")
     }]
   },
 

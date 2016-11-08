@@ -22,6 +22,8 @@
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "foundation": "^4.2.1-1",
+    "foundation-sites": "^6.2.4",
     "node-sass": "^3.11.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1"
