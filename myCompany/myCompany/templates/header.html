@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<section id="header">
+  <div class="navbar">
+    <div class="menu">
+      <ul class="navigation">
+        <li class="nav_item">
+          {% if request.user.is_authenticated %}
+            <a href="">{{ request.user.email }}</a>
+          {% else %}
+            <a href="">{% trans "login" %}</a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
