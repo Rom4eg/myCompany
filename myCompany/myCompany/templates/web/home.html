@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block head %}
+{% block css %}
 <link rel="stylesheet" href="{% static "css/home.css" %}" media="screen" title="">
 {% endblock %}
 
@@ -10,4 +10,10 @@
 
 Home ctrl
 
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/home.js' %}">
+
+</script>
 {% endblock %}

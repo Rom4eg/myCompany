@@ -5,3 +5,5 @@ import { BaseController } from './base.js';
 class HomeController extends BaseController{
 
 }
+
+let home = new HomeController();

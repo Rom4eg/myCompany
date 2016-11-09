@@ -1,26 +1,31 @@
 "use strict";
 
 const path = require('path');
-const base_dir = path.join(__dirname, 'myCompany');
+const base_dir = __dirname;
+const project_dir = path.join(base_dir, 'myCompany');
+let webpack = require("webpack");
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  context: path.join(base_dir, "myCompany/static/js/"),
+  context: path.join(project_dir, "myCompany/static/js/"),
   entry: {
     home: './home.js',
   },
   output: {
-    path: path.join(base_dir, "myCompany/static/build"),
+    path: path.join(project_dir, "myCompany/static/build"),
     filename: "js/[name].js"
   },
 
   resolveLoader: {
-    root: path.join(__dirname, 'node_modules')
+    root: path.join(base_dir, 'node_modules')
   },
 
   watch: true,
   resolve:{
-    extensions: ['', '.js', '.sass']
+    extensions: ['', '.js', '.sass'],
+    alias:{
+      jquery: path.join(base_dir,"node_modules/foundation-sites/vendor/jquery/dist/jquery.js")
+    }
   },
 
   module: {
@@ -38,6 +43,10 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin("css/[name].css", {
       allChunks: true
+    }),
+    new webpack.ProvidePlugin({
+      "$": "jquery",
+      "jQuery": "jquery"
     }),
   ]
 };

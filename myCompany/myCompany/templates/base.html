@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>MyCompany - Yellow Pages</title>
     {% block head %}{% endblock %}
+    {% block css %} {% endblock %}
   </head>
   <body>
     {% include 'header.html' %}
     {% block body %}{% endblock %}
 
-    {% block footer%}{% endblock %}
+    {% block footer %}{% endblock %}
+    {% block js %} {% endblock %}
   </body>
 </html>
