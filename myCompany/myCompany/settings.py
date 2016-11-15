@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 APPEND_SLASH = True
+AUTHENTICATION_BACKENDS = [
+    'users.backend.AuthBackend'
+]
+
+
 
 # Application definition
 
@@ -140,8 +145,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "myCompany/static/build"),
 ]
 
-
-try:
-    from settings_local import *
-except:
-    pass
+from .settings_local import *

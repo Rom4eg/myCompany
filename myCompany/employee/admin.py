@@ -1,3 +1,15 @@
 from django.contrib import admin
+from employee.models import Company, Department, Employee
 
-# Register your models here.
+class CompanyAdmin(admin.ModelAdmin):
+    pass
+
+class DepartmentAdmin(admin.ModelAdmin):
+    pass
+
+class EmployeeAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Company, CompanyAdmin)
+admin.site.register(Department, DepartmentAdmin)
+admin.site.register(Employee, EmployeeAdmin)
