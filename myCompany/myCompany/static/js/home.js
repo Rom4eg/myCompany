@@ -1,9 +1,4 @@
 
 import "../sass/home.sass";
 import { BaseController } from './base.js';
-
-class HomeController extends BaseController{
-
-}
-
-let home = new HomeController();
+import HomeComponent from '../components/home/home.jsx';
