@@ -133,11 +133,11 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ]
+# }
 
 LANGUAGES = (
     ('en-us', 'English'),
