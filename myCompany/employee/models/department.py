@@ -6,3 +6,6 @@ from employee.models import Company
 class Department(models.Model):
     name = models.CharField(_("Name"), max_length=255)
     company = models.ForeignKey(Company)
+
+    def __str__(self):
+        return "%s" % (self.name)
