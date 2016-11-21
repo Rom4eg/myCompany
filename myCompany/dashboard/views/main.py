@@ -1,12 +1,18 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import generics
 
-from dashboard.containers import DashboardContainer
+from django.contrib.admin.models import LogEntry
+
+from dashboard.containers import DashboardObjectContainer
 from dashboard.serializers import DashboardSerializer
 
-class DashoardGeneral(APIView):
+
+class DashboardGeneral(generics.ListAPIView):
 
     def get(self, request):
-        dashboard = DashboardContainer('Some Title', 'This is a content')
-        serializer = DashboardSerializer(dashboard)
-        return Response(serializer.data)
+        entryies = list(LogEntry.objects.all()[:10])
+        containers = []
+        for entry in entryies:
+            containers.append(DashboardObjectContainer(entry))
+        return Response(DashboardSerializer(containers, many=True).data)

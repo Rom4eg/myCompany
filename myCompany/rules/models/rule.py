@@ -2,7 +2,10 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from django.db import models
 
-class Rule(models.Model):
+from dashboard.mixins import DashboardMixin
+
+class Rule(models.Model, DashboardMixin):
+
 
     title = models.CharField(_("Title"), max_length=255)
     content = models.TextField(_('Rule content'))
@@ -12,3 +15,12 @@ class Rule(models.Model):
 
     def __str__(self):
         return "%s (author: %s)" % (self.title, self.author)
+
+    def getTitle(self):
+        return self.title
+
+    def getContent(self):
+        return self.content
+
+    def getAuthor(self):
+        return self.author
