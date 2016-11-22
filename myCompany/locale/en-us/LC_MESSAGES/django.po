@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 18:46+0000\n"
+"POT-Creation-Date: 2016-11-22 20:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,42 @@ msgstr ""
 msgid "We have a new employee, %s"
 msgstr ""
 
+#: events/models/comment.py:9 events/models/event.py:13 rules/models/rule.py:13
+msgid "Author"
+msgstr ""
+
+#: events/models/comment.py:10
+msgid "Comment"
+msgstr ""
+
+#: events/models/comment.py:11
+msgid "Event"
+msgstr ""
+
+#: events/models/event.py:10 rules/models/rule.py:10
+msgid "Title"
+msgstr ""
+
+#: events/models/event.py:11
+msgid "Event content"
+msgstr ""
+
+#: events/models/event.py:12
+msgid "Subscribers"
+msgstr ""
+
+#: events/models/event.py:14 rules/models/rule.py:14
+msgid "Create date"
+msgstr ""
+
+#: events/models/event.py:15
+msgid "Start date"
+msgstr ""
+
+#: events/models/event.py:16
+msgid "End date"
+msgstr ""
+
 #: myCompany/templates/header.html:16
 msgid "Dashboard"
 msgstr ""
@@ -62,26 +98,22 @@ msgstr ""
 msgid "Rules"
 msgstr ""
 
-#: myCompany/templates/header.html:37
+#: myCompany/templates/header.html:26
+msgid "Events"
+msgstr ""
+
+#: myCompany/templates/header.html:31
+msgid "Employees"
+msgstr ""
+
+#: myCompany/templates/header.html:47
 msgid "Settings"
 msgstr ""
 
-#: myCompany/templates/header.html:38
+#: myCompany/templates/header.html:48
 msgid "Logout"
-msgstr ""
-
-#: rules/models/rule.py:10
-msgid "Title"
 msgstr ""
 
 #: rules/models/rule.py:11
 msgid "Rule content"
-msgstr ""
-
-#: rules/models/rule.py:13
-msgid "Author"
-msgstr ""
-
-#: rules/models/rule.py:14
-msgid "Create date"
 msgstr ""
