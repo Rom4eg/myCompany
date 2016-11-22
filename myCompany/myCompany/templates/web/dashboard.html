@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/dashboard.css" %}" media="screen" title="">
+{% endblock %}
+
+
+{% block body %}
+
+<section id="dashboard" class="row">
+  <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+    <div class="items">
+      <div class="item">sd</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}
