@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/events.css" %}" media="screen" title="">
+{% endblock %}
+
+
+{% block body %}
+<section id="events" class="row"></section>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/events.js' %}"></script>
+{% endblock %}
