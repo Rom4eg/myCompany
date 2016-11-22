@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-08 20:32+0000\n"
+"POT-Creation-Date: 2016-11-22 18:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: myCompany/templates/header.html:14
-msgid "Dashoard"
+#: employee/models/company.py:5 employee/models/department.py:7
+msgid "Name"
 msgstr ""
 
-#: myCompany/templates/header.html:18
+#: employee/models/employee.py:10
+msgid "Email"
+msgstr ""
+
+#: employee/models/employee.py:11 rules/models/rule.py:12
+msgid "User"
+msgstr ""
+
+#: employee/models/employee.py:12
+msgid "Department"
+msgstr ""
+
+#: employee/models/employee.py:13
+msgid "First Name"
+msgstr ""
+
+#: employee/models/employee.py:14
+msgid "Last Name"
+msgstr ""
+
+#: employee/models/employee.py:15
+msgid "Middle Name"
+msgstr ""
+
+#: employee/models/employee.py:21
+msgid "We have a new Employee"
+msgstr ""
+
+#: employee/models/employee.py:24
+#, python-format
+msgid "We have a new employee, %s"
+msgstr ""
+
+#: myCompany/templates/header.html:16
+msgid "Dashboard"
+msgstr ""
+
+#: myCompany/templates/header.html:21
+msgid "Rules"
+msgstr ""
+
+#: myCompany/templates/header.html:37
 msgid "Settings"
 msgstr ""
 
-#: myCompany/templates/header.html:19
+#: myCompany/templates/header.html:38
 msgid "Logout"
+msgstr ""
+
+#: rules/models/rule.py:10
+msgid "Title"
+msgstr ""
+
+#: rules/models/rule.py:11
+msgid "Rule content"
+msgstr ""
+
+#: rules/models/rule.py:13
+msgid "Author"
+msgstr ""
+
+#: rules/models/rule.py:14
+msgid "Create date"
 msgstr ""
