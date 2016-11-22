@@ -12,6 +12,7 @@ module.exports = {
     dashboard: './dashboard.js',
     rules: './rules.js',
     events: './events.js',
+    employees: './employees.js',
   },
   output: {
     path: path.join(project_dir, "myCompany/static/build"),

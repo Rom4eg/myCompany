@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^api/dashboard/', include('dashboard.urls', namespace="dashboard")),
     url(r'^api/rules/', include('rules.urls', namespace="rules")),
     url(r'^api/events/', include('events.urls', namespace="events")),
+    url(r'^api/employee/', include('employee.urls', namespace="employee")),
     url(r'', include('web.urls')),
 ]

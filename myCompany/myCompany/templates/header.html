@@ -26,6 +26,11 @@
           {% trans "Events" %}
         </a>
       </li>
+      <li class="">
+        <a href="{% url 'employee' %}">
+          {% trans "Employees" %}
+        </a>
+      </li>
       <li class="is-dropdown-submenu-parent">
         {% if request.user.is_authenticated %}
         <a href="#">
