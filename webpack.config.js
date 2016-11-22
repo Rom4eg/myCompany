@@ -9,7 +9,8 @@ let ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   context: path.join(project_dir, "myCompany/static/js/"),
   entry: {
-    home: './home.js',
+    dashboard: './dashboard.js',
+    rules: './rules.js',
   },
   output: {
     path: path.join(project_dir, "myCompany/static/build"),

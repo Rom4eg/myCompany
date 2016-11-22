@@ -21,4 +21,4 @@ class Employee(models.Model, DashboardMixin):
         return _("We have a new Employee")
 
     def getContent(self):
-        return _("We have a new employee, %s %s" % (self.user.first_name, self.user.last_name))
+        return _("We have a new employee, %s" % (self.user.get_full_name()))

@@ -1,3 +1,4 @@
-from web.views.home import Home
+from web.views.home import Dashboard
+from web.views.rules import Rules
 
-__all__ = ['Home', ]
+__all__ = ['Dashboard', 'Rules']

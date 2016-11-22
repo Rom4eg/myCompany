@@ -12,8 +12,13 @@
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="active">
-        <a href="#">
+        <a href="{% url 'dashboard'%}">
           {% trans "Dashboard" %}
+        </a>
+      </li>
+      <li class="">
+        <a href="{% url 'rules' %}">
+          {% trans "Rules" %}
         </a>
       </li>
       <li class="is-dropdown-submenu-parent">
