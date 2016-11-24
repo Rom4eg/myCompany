@@ -5,7 +5,7 @@ const base_dir = __dirname;
 const project_dir = path.join(base_dir, 'myCompany');
 let webpack = require("webpack");
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: path.join(project_dir, "myCompany/static/js/"),
   entry: {
@@ -51,5 +51,10 @@ module.exports = {
       "$": "jquery",
       "jQuery": "jquery"
     }),
+    new CopyWebpackPlugin([{
+        from: "../fonts",
+        to: "../build/fonts"
+      }
+    ])
   ]
 };

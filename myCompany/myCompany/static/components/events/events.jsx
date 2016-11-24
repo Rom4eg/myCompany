@@ -9,14 +9,20 @@ class EventsListItem extends React.Component{
 
   render(){
     return (
-      <div>
-        <div className="create_date">{this.props.data.create_date}</div>
+      <div className="wrapper list-item">
         <div className="title">{this.props.data.title}</div>
-        <div className="content">{this.props.data.content}</div>
-        <div className="author">{this.props.data.author}</div>
-        <div className="start_date">{this.props.data.reviewed}</div>
-        <div className="end_date">{this.props.data.reviewed}</div>
-      </div>)
+        <div className="create_date">{this.props.data.create_date}</div>
+        <div className="content">
+          {this.props.data.content}
+          <div className="start_date">{gettext("Started")} - {this.props.data.start_date}</div>
+          <div className="end_date">{gettext("Ended")} - {this.props.data.end_date}</div>
+        </div>
+        <div className="footer row">
+          <div className="author small-6 columns">{this.props.data.author}</div>
+          <div className="more-btn text-right small-6 columns">{gettext("Read more")}</div>
+        </div>
+      </div>
+    )
   }
 }
 

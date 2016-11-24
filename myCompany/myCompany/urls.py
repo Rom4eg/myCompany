@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.views.i18n import JavaScriptCatalog
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^api/dashboard/', include('dashboard.urls', namespace="dashboard")),
     url(r'^api/rules/', include('rules.urls', namespace="rules")),
     url(r'^api/events/', include('events.urls', namespace="events")),
