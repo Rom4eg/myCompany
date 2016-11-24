@@ -20,6 +20,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^api/dashboard/', include('dashboard.urls', namespace="dashboard")),
     url(r'^api/rules/', include('rules.urls', namespace="rules")),
     url(r'^api/events/', include('events.urls', namespace="events")),

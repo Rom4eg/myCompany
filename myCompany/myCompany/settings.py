@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'rules',
     'events',
     'dashboard',
-    'users'
+    'users',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,13 @@ LOCALE_PATHS = (
 #         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 #     ]
 # }
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace,fullpage",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
 
 LANGUAGES = (
     ('en-us', 'English'),
