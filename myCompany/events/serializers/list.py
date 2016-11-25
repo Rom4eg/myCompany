@@ -3,8 +3,6 @@ from events import models
 
 class EventListSerializer(serializers.ModelSerializer):
 
-    author = serializers.CharField()
-
     class Meta:
         model = models.Event
-        fields = '__all__'
+        fields = ("id", "title", "content_preview", "author", "create_date", "start_date", "end_date")

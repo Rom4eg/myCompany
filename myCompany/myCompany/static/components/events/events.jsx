@@ -13,7 +13,7 @@ class EventsListItem extends React.Component{
         <div className="title">{this.props.data.title}</div>
         <div className="create_date">{this.props.data.create_date}</div>
         <div className="content">
-          <div className="event-content" dangerouslySetInnerHTML={{"__html":this.props.data.content}}></div>
+          <div className="event-content" dangerouslySetInnerHTML={{"__html":this.props.data.content_preview}}></div>
           <div className="start_date">{gettext("Started")} - {this.props.data.start_date}</div>
           <div className="end_date">{gettext("Ended")} - {this.props.data.end_date}</div>
         </div>

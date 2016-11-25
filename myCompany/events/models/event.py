@@ -1,5 +1,6 @@
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
+from django.utils.text import Truncator
 from django.db import models
 from tinymce.models import HTMLField
 from dashboard.mixins import DashboardMixin
@@ -26,3 +27,7 @@ class Event(models.Model, DashboardMixin):
 
     def getAuthor(self):
         return self.author
+
+    @property
+    def content_preview(self):
+        return Truncator(self.content).words(70, html=True)
