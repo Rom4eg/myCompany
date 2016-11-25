@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
 
-class Events(TemplateView):
+class EventsList(TemplateView):
 
-    template_name = "web/events.html"
+    template_name = "web/events/events_list.html"

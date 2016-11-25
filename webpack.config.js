@@ -11,7 +11,7 @@ module.exports = {
   entry: {
     dashboard: './dashboard.js',
     rules: './rules.js',
-    events: './events.js',
+    events_list: './events_list.js',
     employees: './employees.js',
   },
   output: {
@@ -27,7 +27,8 @@ module.exports = {
   resolve:{
     extensions: ['', '.js', '.sass'],
     alias:{
-      jquery: path.join(base_dir,"node_modules/foundation-sites/vendor/jquery/dist/jquery.js")
+      jquery: path.join(base_dir,"node_modules/foundation-sites/vendor/jquery/dist/jquery.js"),
+      moment: path.join(base_dir,"node_modules/moment/moment.js")
     }
   },
 
