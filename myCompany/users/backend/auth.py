@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-
+from django.core.exceptions import ObjectDoesNotExist
 class AuthBackend(object):
 
     def __init__(self):
@@ -8,8 +8,10 @@ class AuthBackend(object):
     def authenticate(self, username=None, password=None):
         if not username:
             return None
-        user = self.user_model.objects.get(username=username)
-        print(user.check_password(password))
+        try:
+            user = self.user_model.objects.get(username=username)
+        except ObjectDoesNotExist:
+            return None
         if user.check_password(password):
                 return user
         return None
