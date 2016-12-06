@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import moment from "moment";
+import {Link} from "react-router";
 
 class EventsListItem extends React.Component{
 
   constructor(props){
       super(props);
-      this.state = {
-          url_to_detail: "/events/"+props.data.id+"/",
-      }
   }
 
   format_datetime(datetime_string){
@@ -19,7 +17,7 @@ class EventsListItem extends React.Component{
     return (
       <div className="wrapper list-item">
         <div className="title">
-            <a href={this.state.url_to_detail}>{this.props.data.title}</a>
+            <Link to={`/events/${this.props.data.id}/`}>{this.props.data.title}</Link>
         </div>
         <div className="create_date">{this.format_datetime(this.props.data.create_date)}</div>
         <div className="content">
@@ -34,25 +32,37 @@ class EventsListItem extends React.Component{
         <div className="footer row">
           <div className="author small-6 columns">{this.props.data.author}</div>
           <div className="more-btn text-right small-6 columns">
-              <a href={this.state.url_to_detail}>{gettext("Read more")}</a>
+              <Link to={`/events/${this.props.data.id}/`}>{gettext("Read more")}</Link>
           </div>
         </div>
+        {this.props.children}
       </div>
     )
   }
 }
 
-class EventsListContainer extends React.Component{
+export class EventsListContainer extends React.Component{
 
   constructor(props){
       super(props);
       this.state = {items:[]};
-      $.ajax({
-          url: '/api/events/list/',
 
-      }).then((resp)=>{
-          this.setState({items: resp});
-      });
+  }
+
+  componentWillMount(){
+    this.data_request = $.ajax({
+      url: '/api/events/list/',
+
+    }).done((resp)=>{
+      this.setState({items: resp});
+    });
+  }
+
+  componentWillUnmount(){
+    if(this.data_request){
+      this.data_request.abort();
+      this.data_request = undefined;
+    }
   }
 
   render(){
@@ -65,4 +75,4 @@ class EventsListContainer extends React.Component{
   }
 }
 
-ReactDom.render(<EventsListContainer />, document.getElementById("events"));
+// ReactDom.render(<EventsListContainer />, document.getElementById("events"));

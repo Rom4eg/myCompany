@@ -10,7 +10,6 @@ import "foundation-sites/dist/foundation";
 // import "foundation-sites/js/foundation.accordion";
 // import "foundation-sites/js/foundation.responsiveMenu";
 
-
 export class BaseController{
 
   constructor(){
