@@ -25,7 +25,7 @@ export class EventItem extends React.Component{
 
   render(){
     return (
-      <div className="wrapper detail-item">
+      <div className="wrapper detail-item small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
         <div className="title">
             {this.state.item.title}
         </div>
@@ -40,7 +40,7 @@ export class EventItem extends React.Component{
           </div>
         </div>
         <div className="footer row">
-          <div className="author small-6-offset small-6 columns">{this.state.item.author}</div>
+          <div className="author small-6 small-offset-6 columns text-right">{this.state.item.author}</div>
         </div>
       </div>
     )
