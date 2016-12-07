@@ -11,16 +11,14 @@ class RulesListItem extends React.Component{
   render(){
     return (
       <div className="wrapper list-item">
-        <div className="header">
-          <div className="title">
-            <Link to={"/rules/"+this.props.data.id+"/"}>{this.props.data.title}</Link>
-          </div>
+        <div className="title small-12 column">
+          <Link to={"/rules/"+this.props.data.id+"/"}>{this.props.data.title}</Link>
         </div>
-        <div className="subtitle">
+        <div className="subtitle small-12 column">
           <div className="create_date">{this.props.data.create_date}</div>
           <div className="author">{this.props.data.author}</div>
         </div>
-        <div className="content" dangerouslySetInnerHTML={{"__html":this.props.data.content_preview}}></div>
+        <div className="content small-12 column" dangerouslySetInnerHTML={{"__html":this.props.data.content_preview}}></div>
         {this.props.children}
       </div>
     )

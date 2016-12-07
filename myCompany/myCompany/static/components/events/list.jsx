@@ -42,7 +42,6 @@ class EventsListItem extends React.Component{
             </div>
           </div>
         </div>
-        {this.props.children}
       </div>
     )
   }
@@ -78,6 +77,7 @@ export class EventsListContainer extends React.Component{
         {this.state.items.map((el, i)=>{
           return <EventsListItem data={el} key={i}/>
         })}
+        {this.props.children}
       </div>)
   }
 }
