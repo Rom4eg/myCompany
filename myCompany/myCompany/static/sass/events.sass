@@ -2,20 +2,51 @@
 @import "./base.sass"
 
 #events
+  margin-top: 2rem
+  margin-bottom: 2rem
   &.list-container
     padding-top: 2rem
     padding-bottom: 2rem
-  .title
-    font-size: 2rem
-    text-transform: uppercase
-  .create_date
-    font-size: .8rem
-    color: $grey_500
-  .content
-    padding-top: 1.4rem
-    padding-bottom: 1.4rem
-  .start_date
-    margin-top: 1.4rem
-  .footer
-    border-top: 1px solid $grey_300
-    padding: .8rem 0rem
+  .detail-item, .list-item
+    .title
+      font-size: 2rem
+      text-transform: uppercase
+    .create_date
+      font-size: .8rem
+      color: $grey_500
+    .content
+      padding-top: 1.4rem
+      padding-bottom: 1.4rem
+    .period
+      display: flex
+      justify-content: space-between
+      padding: 1.4rem 0rem
+      .start_date, .end_date
+        font-size: 0.6rem
+        background: $blue_grey_100
+        border-radius: .2rem
+        padding: .3rem
+      .duration
+        font-size: 0.8rem
+        align-self: center
+  .detail-item
+    border-bottom: 1px solid $grey_300
+    .subtitle
+      display: flex
+    .author
+      font-size: .8rem
+      color: $grey_500
+      padding-left: 2rem
+  .comments
+    .header
+      padding: .3rem 0rem
+    .content
+      padding: .4rem 0rem
+    .footer
+      .comment_date
+        font-size: .8rem
+        color: $grey_500
+    .comment
+      padding-top: 1.4rem
+      padding-bottom: 1.4rem
+      border-bottom: 1px solid $grey_300

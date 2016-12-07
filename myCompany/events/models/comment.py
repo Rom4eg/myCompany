@@ -13,3 +13,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return "%s (author: %s)" % (self.event, self.author)
+
+    class Meta:
+        ordering = ["-create_date"]
