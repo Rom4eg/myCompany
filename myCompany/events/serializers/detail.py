@@ -7,4 +7,4 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Event
-        fields = ("id", "title", "content_preview", "author", "create_date", "start_date", "end_date")
+        fields = ("id", "title", "content", "author", "create_date", "start_date", "end_date")

@@ -31,7 +31,7 @@ export class EventItem extends React.Component{
         </div>
         <div className="create_date">{this.format_datetime(this.state.item.create_date)}</div>
         <div className="content">
-          <div className="event-content" dangerouslySetInnerHTML={{"__html":this.state.item.content_preview}}></div>
+          <div className="event-content" dangerouslySetInnerHTML={{"__html":this.state.item.content}}></div>
           <div className="start_date">
               {gettext("Started")} - {this.format_datetime(this.state.item.start_date)}
           </div>

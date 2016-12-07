@@ -1,7 +1,8 @@
 import events.views as views
 from django.conf.urls import url
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    url(r'list/$', views.EventsList.as_view(), name="home"),
-    url(r'(?P<event_id>\d+)/$', views.EventDetail.as_view(), name="event_detail"),
-]
+router = DefaultRouter()
+router.register(r'events', views.EventsViewSet)
+
+urlpatterns = router.urls

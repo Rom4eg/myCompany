@@ -51,7 +51,7 @@ export class EventsListContainer extends React.Component{
 
   componentWillMount(){
     this.data_request = $.ajax({
-      url: '/api/events/list/',
+      url: '/api/events/',
 
     }).done((resp)=>{
       this.setState({items: resp});
