@@ -1,10 +1,12 @@
 from rest_framework import serializers
+from events.serializers import CommentSerializer
 from events import models
 
 class EventSerializer(serializers.ModelSerializer):
 
     author = serializers.StringRelatedField()
+    comments = CommentSerializer(many=True)
 
     class Meta:
         model = models.Event
-        fields = ("id", "title", "content", "author", "create_date", "start_date", "end_date")
+        fields = "__all__"
