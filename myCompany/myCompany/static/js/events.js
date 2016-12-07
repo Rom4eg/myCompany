@@ -1,11 +1,12 @@
 
 import "./../sass/events.sass";
 import { BaseController } from './base.js';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import {EventsListContainer} from './../components/events/list.jsx';
 import {EventItem} from './../components/events/detail.jsx';
 import React from 'react';
 import ReactDom from 'react-dom';
+
 class EventsController extends BaseController{
 
     init(){

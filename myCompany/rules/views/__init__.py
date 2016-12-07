@@ -1,3 +1,3 @@
-from rules.views.home import RulesList
+from rules.views.rules import RulesViewSet
 
-__all__ = ['RulesList', ]
+__all__ = ['RulesViewSet', ]
