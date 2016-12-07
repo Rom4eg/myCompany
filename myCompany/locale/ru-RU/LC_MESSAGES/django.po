@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 20:47+0000\n"
+"POT-Creation-Date: 2016-12-07 19:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "We have a new employee, %s"
 msgstr ""
 
-#: events/models/comment.py:9 events/models/event.py:13 rules/models/rule.py:13
+#: events/models/comment.py:9 events/models/event.py:14 rules/models/rule.py:13
 msgid "Author"
 msgstr ""
 
@@ -66,27 +66,28 @@ msgstr ""
 msgid "Event"
 msgstr ""
 
-#: events/models/event.py:10 rules/models/rule.py:10
-msgid "Title"
-msgstr ""
-
-#: events/models/event.py:11
-msgid "Event content"
-msgstr ""
-
-#: events/models/event.py:12
-msgid "Subscribers"
-msgstr ""
-
-#: events/models/event.py:14 rules/models/rule.py:14
+#: events/models/comment.py:12 events/models/event.py:15
+#: rules/models/rule.py:14
 msgid "Create date"
 msgstr ""
 
-#: events/models/event.py:15
-msgid "Start date"
+#: events/models/event.py:11 rules/models/rule.py:10
+msgid "Title"
+msgstr ""
+
+#: events/models/event.py:12
+msgid "Event content"
+msgstr ""
+
+#: events/models/event.py:13
+msgid "Subscribers"
 msgstr ""
 
 #: events/models/event.py:16
+msgid "Start date"
+msgstr ""
+
+#: events/models/event.py:17
 msgid "End date"
 msgstr ""
 

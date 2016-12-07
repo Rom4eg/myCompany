@@ -13,26 +13,33 @@ class EventsListItem extends React.Component{
       return moment(datetime_string).format("DD.MM.YYYY HH:mm:ss");
   }
 
+  duration(start, end){
+    let diff = moment(end).diff(moment(start));
+    return moment(diff).format("DD [day(s) ]");
+  }
+
   render(){
     return (
       <div className="wrapper list-item">
-        <div className="title">
-            <Link to={`/events/${this.props.data.id}/`}>{this.props.data.title}</Link>
+        <div className="title small-12 columns">
+            <Link to={"/events/" + this.props.data.id+"/"}>{this.props.data.title}</Link>
         </div>
-        <div className="create_date">{this.format_datetime(this.props.data.create_date)}</div>
-        <div className="content">
+        <div className="subtitle small-12 columns">
+          <div className="create_date">{moment(this.props.data.create_date).format("YYYY.MM.DD")}</div>
+          <div className="author">{this.props.data.author}</div>
+        </div>
+        <div className="content small-12 columns">
           <div className="event-content" dangerouslySetInnerHTML={{"__html":this.props.data.content_preview}}></div>
-          <div className="start_date">
-              {gettext("Started")} - {this.format_datetime(this.props.data.start_date)}
-          </div>
-          <div className="end_date">
-              {gettext("Ended")} - {this.format_datetime(this.props.data.end_date)}
-          </div>
-        </div>
-        <div className="footer row">
-          <div className="author small-6 columns">{this.props.data.author}</div>
-          <div className="more-btn text-right small-6 columns">
-              <Link to={`/events/${this.props.data.id}/`}>{gettext("Read more")}</Link>
+          <div className="period">
+            <div className="start_date">
+                {moment(this.props.data.start_date).format("YYYY.MM.DD")}
+            </div>
+            <div className="duration">
+              {this.duration(this.props.data.start_date, this.props.data.end_date)}
+            </div>
+            <div className="end_date">
+                {moment(this.props.data.end_date).format("YYYY.MM.DD")}
+            </div>
           </div>
         </div>
         {this.props.children}

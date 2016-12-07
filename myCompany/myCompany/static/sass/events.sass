@@ -2,12 +2,13 @@
 @import "./base.sass"
 
 #events
-  margin-top: 2rem
-  margin-bottom: 2rem
   &.list-container
     padding-top: 2rem
     padding-bottom: 2rem
   .detail-item, .list-item
+    margin-top: 2rem
+    margin-bottom: 2rem
+    border-bottom: 1px solid $grey_300
     .title
       font-size: 2rem
       text-transform: uppercase
@@ -29,14 +30,12 @@
       .duration
         font-size: 0.8rem
         align-self: center
-  .detail-item
-    border-bottom: 1px solid $grey_300
     .subtitle
       display: flex
-    .author
-      font-size: .8rem
-      color: $grey_500
-      padding-left: 2rem
+      .author
+        font-size: .8rem
+        color: $grey_500
+        padding-left: 2rem
   .comments
     .header
       padding: .3rem 0rem
