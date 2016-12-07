@@ -15,7 +15,7 @@ class EventsListItem extends React.Component{
 
   duration(start, end){
     let diff = moment(end).diff(moment(start));
-    return moment(diff).format("DD [day(s) ]");
+    return moment(diff).format("D [day(s)]");
   }
 
   render(){
