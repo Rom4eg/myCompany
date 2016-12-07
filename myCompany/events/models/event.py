@@ -19,6 +19,9 @@ class Event(models.Model, DashboardMixin):
     def __str__(self):
         return "%s (author: %s)" % (self.title, self.author)
 
+    def __int__(self):
+        return self.pk
+
     def getTitle(self):
         return self.title
 
