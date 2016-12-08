@@ -29,3 +29,6 @@ class Rule(models.Model, DashboardMixin):
     @property
     def content_preview(self):
         return Truncator(self.content).words(30, html=True)
+
+    class Meta:
+        ordering = ["-create_date"]
