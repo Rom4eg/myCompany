@@ -8,3 +8,4 @@ public
 **/build/**/*.css
 **/build/**/*.ttf
 **/locale/**/*.mo
+**/media/user_*

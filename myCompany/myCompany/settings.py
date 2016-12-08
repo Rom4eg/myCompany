@@ -160,4 +160,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "myCompany/static/build"),
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
+
 from .settings_local import *

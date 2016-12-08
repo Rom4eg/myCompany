@@ -6,8 +6,12 @@ from employee.models import Department
 from employee.models import Company
 from dashboard.mixins import DashboardMixin
 
+def avatar_location(instance, filename):
+    return "user_%s/%s" % (instance.user.id, filename)
+
 class Employee(models.Model, DashboardMixin):
 
+    avatar = models.ImageField(upload_to=avatar_location, blank=True, null=True, default="default.jpg", verbose_name=_("User icon"))
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_("User"), related_name="employee")
     department = models.ForeignKey(Department, verbose_name=_("Department"))
     company = models.ForeignKey(Company, verbose_name=_("Company"))
