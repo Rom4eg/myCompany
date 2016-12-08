@@ -5,18 +5,20 @@ import moment from 'moment';
 class EmployeeListItem extends React.Component{
   render(){
     return (
-      <div className="list-item">
-        <div className="wrapper">
-          <div className="avatar">
-            <img src="" alt=""/>
+      <div className="list-item row media-object">
+        <div className="media-object-section">
+          <div className="avatar thumbnail">
+            <img src={this.props.data.avatar} alt=""/>
           </div>
+        </div>
+        <div className="right_side media-object-section main-section">
           <div className="header">
-            <div className="name">
+            <div className="name small-12 medium-9">
               <div className="first_name">{this.props.data.first_name}</div>
               <div className="middle_name">{this.props.data.middle_name}</div>
               <div className="last_name">{this.props.data.last_name}</div>
             </div>
-            <div className="date_joined">Since {moment(this.props.data.user.date_joined).format('YYYY-MM-DD')}</div>
+            <div className="date_joined medium-text-right small-12 medium-3">Since {moment(this.props.data.user.date_joined).format('YYYY-MM-DD')}</div>
           </div>
           <div className="company">{this.props.data.company}</div>
           <div className="department">{this.props.data.department}</div>

@@ -3,7 +3,8 @@
 #employees
   .list-item
     padding: .4rem
-    margin: .5rem
+    margin-top: .5rem
+    margin-bottom: .5rem
     background: $blue_grey_50
     border-radius: .1rem
     font-size: .8rem
@@ -11,16 +12,21 @@
       display: flex
       align-items: center
       justify-content: space-between
+      flex-wrap: wrap
       .name
         display: flex
+        flex-wrap: wrap
         font-size: 1rem
         &>div
-          padding-left: .5rem
-        &>div:first-child
-          padding-left: 0rem
+          padding-right: .5rem
+        &>div:last-child
+          padding-right: 0rem
       .date_joined
         font-size: .7rem
         color: $blue_grey_600
     .company
       font-size: .7rem
       color: $blue_grey_600
+    .avatar
+      img
+        width: 100px
