@@ -1,6 +1,10 @@
 import employee.views as views
-from django.conf.urls import url
+from django.conf.urls import url, include
+from rest_framework.routers import SimpleRouter
+
+router = SimpleRouter()
+router.register(r"employee", views.EmployeeViewSet)
 
 urlpatterns = [
-    url(r'list/$', views.EmployeeList.as_view(), name="home"),
+    url(r'^', include(router.urls))
 ]

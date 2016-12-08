@@ -1,3 +1,3 @@
-from employee.views.list import EmployeeList
+from employee.views.employee import EmployeeViewSet
 
-__all__ = ['EmployeeList', ]
+__all__ = ['EmployeeViewSet', ]

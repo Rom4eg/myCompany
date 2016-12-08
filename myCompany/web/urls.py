@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^events/$', views.EventsList.as_view(), name="events_list"),
     url(r'^events/(?P<record_id>\d+)/$', views.EventsDetail.as_view(), name="events_detail"),
 
-    url(r'^employee/$', views.Employees.as_view(), name="employee"),
+    url(r'^employee/$', views.Employees.as_view(), name="employee_list"),
+    url(r'^employee/(?P<record_id>\d+)/$', views.Employees.as_view(), name="employee_detail"),
 ]
