@@ -10,11 +10,17 @@ class DashboardItem extends React.Component{
 
     render(){
       return (
-        <div>
-          <div className="date">{this.props.data.date}</div>
-          <div className="title">{this.props.data.title}</div>
-          <div className="content">{this.props.data.content}</div>
-        </div>)
+        <div className="dashboard-item">
+          <div className="title">
+            <a href={this.props.data.url}>{this.props.data.title}</a>
+          </div>
+          <div className="subtitle">
+            <div className="date">{this.props.data.date}</div>
+            <div className="author">{this.props.data.author}</div>
+          </div>
+          <div className="content" dangerouslySetInnerHTML={{"__html":this.props.data.content}}></div>
+        </div>
+      )
     }
 }
 
@@ -24,7 +30,7 @@ class Dashboard extends React.Component{
         super(props);
         this.state = {items:[]};
         $.ajax({
-            url: '/api/dashboard/list/',
+            url: '/api/dashboard/',
 
         }).then((resp)=>{
             this.setState({items: resp});

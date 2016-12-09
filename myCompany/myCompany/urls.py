@@ -23,9 +23,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^api/', include('dashboard.urls', namespace="dashboard")),
-    url(r'^api/', include('rules.urls', namespace="rules")),
-    url(r'^api/', include('events.urls', namespace="events")),
-    url(r'^api/', include('employee.urls', namespace="employee")),
+    url(r'^api/', include('dashboard.urls')),
+    url(r'^api/', include('rules.urls')),
+    url(r'^api/', include('events.urls')),
+    url(r'^api/', include('employee.urls')),
     url(r'', include('web.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

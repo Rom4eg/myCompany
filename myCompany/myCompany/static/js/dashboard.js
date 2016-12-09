@@ -1,5 +1,5 @@
 
-import "../sass/home.sass";
+import "../sass/dashboard.sass";
 import { BaseController } from './base.js';
 import Dashboard from '../components/dashboard/dashboard.jsx';
 

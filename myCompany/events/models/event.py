@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext as _
 from django.utils.text import Truncator
 from django.db import models
+from django.urls import reverse
 from tinymce.models import HTMLField
 from dashboard.mixins import DashboardMixin
 from employee.models import Employee
@@ -26,10 +27,10 @@ class Event(models.Model, DashboardMixin):
         return self.title
 
     def getContent(self):
-        return self.content
+        return self.content_preview
 
-    def getAuthor(self):
-        return self.author
+    def get_absolute_url(self):
+        return reverse('events_detail', args=[str(self.pk)])
 
     @property
     def content_preview(self):

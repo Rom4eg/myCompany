@@ -1,15 +1,14 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext as _
-
+from django.urls import reverse
 from employee.models import Department
 from employee.models import Company
-from dashboard.mixins import DashboardMixin
 
 def avatar_location(instance, filename):
     return "user_%s/%s" % (instance.user.id, filename)
 
-class Employee(models.Model, DashboardMixin):
+class Employee(models.Model):
 
     avatar = models.ImageField(upload_to=avatar_location, blank=True, null=True, default="default.jpg", verbose_name=_("User icon"))
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_("User"), related_name="employee")
@@ -23,9 +22,3 @@ class Employee(models.Model, DashboardMixin):
 
     def __str__(self):
         return "%s \"%s\" %s" % (self.first_name, self.middle_name, self.last_name)
-
-    def getTitle(self):
-        return _("We have a new Employee")
-
-    def getContent(self):
-        return _("We have a new employee, %s" % (self.user.get_full_name()))

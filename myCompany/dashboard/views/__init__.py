@@ -1,3 +1,3 @@
-from dashboard.views.main import DashboardGeneral
+from dashboard.views.main import DashboardViewSet
 
-__all__ = ["DashboardGeneral", ]
+__all__ = ["DashboardViewSet", ]
