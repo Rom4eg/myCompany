@@ -18,14 +18,17 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.views.i18n import JavaScriptCatalog
 from django.contrib import admin
+from web.views import ApiScheme
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^api/$', ApiScheme.as_view(), name="menu_list"),
     url(r'^api/', include('dashboard.urls')),
     url(r'^api/', include('rules.urls')),
     url(r'^api/', include('events.urls')),
     url(r'^api/', include('employee.urls')),
+    url(r'^api/', include('users.urls')),
     url(r'', include('web.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

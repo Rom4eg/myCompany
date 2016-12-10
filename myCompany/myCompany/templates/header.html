@@ -1,5 +1,10 @@
 {% load i18n %}
 
+{% url 'dashboard' as dashoard_url %}
+{% url 'rules_list' as rules_url %}
+{% url 'events_list' as events_url %}
+{% url 'employee_list' as employee_url %}
+
 <section id="header" class="top-bar">
   <div class="top-bar-title">
     <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
@@ -11,27 +16,32 @@
   <div id="responsive-menu">
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="active">
-        <a href="{% url 'dashboard'%}">
+      <li class="{% if request.path == dashoard_url %}active{% endif %}">
+        <a href="{{ dashoard_url }}">
           {% trans "Dashboard" %}
         </a>
       </li>
-      <li class="">
-        <a href="{% url 'rules_list' %}">
+      <li class="{% if request.path == rules_url %}active{% endif %}">
+        <a href="{{ rules_url }}">
           {% trans "Rules" %}
         </a>
       </li>
-      <li class="">
-        <a href="{% url 'events_list' %}">
+      <li class="{% if request.path == events_url %}active{% endif %}">
+        <a href="{{ events_url }}">
           {% trans "Events" %}
         </a>
       </li>
-      <li class="">
-        <a href="{% url 'employee_list' %}">
+      <li class="{% if request.path == employee_url %}active{% endif %}">
+        <a href="{{ employee_url }}">
           {% trans "Employees" %}
         </a>
       </li>
-      <li class="is-dropdown-submenu-parent">
+      <li>
+      <div id="user-menu">
+
+      </div>
+      </li>
+      <!-- <li id="user-menu" class="is-dropdown-submenu-parent">
         {% if request.user.is_authenticated %}
         <a href="#">
           <i class="fi-list"></i>
@@ -47,7 +57,7 @@
           <li><a href="#">{% trans 'Settings' %}</a></li>
           <li><a href="#">{% trans 'Logout' %}</a></li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </div>
   </div>

@@ -7,7 +7,8 @@ from rest_framework.exceptions import NotFound
 class CommentsViewSet(ModelViewSet):
 
     queryset = Comment.objects.all()[:20]
-
+    serializer_class = CommentSerializer
+    
     def list(self, request, event_pk):
         comments = Comment.objects.filter(event__pk=event_pk)[:20]
         serialized = CommentSerializer(comments, many=True)

@@ -9,6 +9,7 @@ from rest_framework.exceptions import NotFound
 class EventsViewSet(ModelViewSet):
 
     queryset = Event.objects.all()[:20]
+    serializer_class = EventListSerializer
 
     def list(self, request):
         items = Event.objects.all()[:20]

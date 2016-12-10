@@ -10,6 +10,10 @@ import "foundation-sites/dist/foundation";
 // import "foundation-sites/js/foundation.accordion";
 // import "foundation-sites/js/foundation.responsiveMenu";
 
+import React from 'react';
+import ReactDom from 'react-dom';
+import { UserMenu } from './../components/user/user_menu.jsx';
+
 export class BaseController{
 
   constructor(){
@@ -20,3 +24,5 @@ export class BaseController{
     $(document).foundation();
   }
 }
+
+ReactDom.render(<UserMenu />, document.getElementById('user-menu'))
