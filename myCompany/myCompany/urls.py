@@ -22,6 +22,7 @@ from web.views import ApiScheme
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('django.contrib.auth.urls')),
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^api/$', ApiScheme.as_view(), name="menu_list"),
