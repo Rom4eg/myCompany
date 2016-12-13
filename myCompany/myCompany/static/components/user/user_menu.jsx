@@ -1,11 +1,27 @@
 import React from 'react';
+import ReactDom from 'react-dom';
+// import { LoginForm } from './login_form.jsx';
 
 export class AnonymousUserMenu extends React.Component{
+
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+
+
+  }
+
+  showLoginForm(e){
+    $("#loginModal").foundation('open');
+  }
+
   render(){
     return (
       <ul className="menu">
         <li className="">
-          <a href="#">{gettext('LogIn')}</a>
+          <a onClick={ (e)=>{ this.showLoginForm(e) } } href="#">{gettext('LogIn')}</a>
         </li>
       </ul>
     )
@@ -20,7 +36,7 @@ export class AuthorizedUserMenu extends React.Component{
 
   logout(e){
     $.ajax({url:'logout'});
-    this.props.onLogout.parentHandler(e);
+    this.props.onLogout(e);
   }
 
   render(){
@@ -64,13 +80,22 @@ export class UserMenu extends React.Component{
     })
   }
 
+  handleLogin(){
+    this.setState({
+      user: {
+        is_authenticated: true
+      }
+    })
+  }
+
   render(){
     return (
       <div>
       { this.state.user.is_authenticated?
-        (<AuthorizedUserMenu data={this.state.user} onLogout={{parentHandler: (e)=>{this.handleLogout(e)}}}/>):
-        (<AnonymousUserMenu />)
+        (<AuthorizedUserMenu data={this.state.user} onLogout={ (e)=>{this.handleLogout(e)} }/>):
+        (<AnonymousUserMenu onLogin={ (e)=>{ this.handleLogin(e) } }/>)
       }
+      {/* <LoginForm /> */}
       </div>
     )
   }

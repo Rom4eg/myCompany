@@ -1,14 +1,20 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.admin.models import LogEntry
+from django.urls import reverse
 from dashboard.mixins import DashboardMixin
 from dashboard.containers import DashboardContainer
 from dashboard.serializers import DashboardSerializer
 
 
-class DashboardViewSet(ViewSet):
+class DashboardViewSet(ViewSet, LoginRequiredMixin):
+
+    login_url = '/login/'
+
+    permission_classes = (IsAuthenticated, )
     queryset = LogEntry.objects.all()[:20]
 
     def list(self, request):

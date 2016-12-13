@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MyCompany - Yellow Pages</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+  </head>
+  <body>
+    <section id="auth"></section>
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+    <script type="text/javascript" src="{% static 'js/auth.js' %}"></script>
+  </body>
+</html>

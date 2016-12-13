@@ -12,7 +12,7 @@ import "foundation-sites/dist/foundation";
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import { UserMenu } from './../components/user/user_menu.jsx';
+// import { UserMenu } from './../components/user/user_menu.jsx';
 
 export class BaseController{
 
@@ -25,4 +25,4 @@ export class BaseController{
   }
 }
 
-ReactDom.render(<UserMenu />, document.getElementById('user-menu'))
+// ReactDom.render(<UserMenu />, document.getElementById('user-menu'))
