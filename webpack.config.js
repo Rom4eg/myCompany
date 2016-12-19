@@ -29,7 +29,8 @@ module.exports = {
     extensions: ['', '.js', '.sass'],
     alias:{
       jquery: path.join(base_dir,"node_modules/foundation-sites/vendor/jquery/dist/jquery.js"),
-      moment: path.join(base_dir,"node_modules/moment/moment.js")
+      moment: path.join(base_dir,"node_modules/moment/moment.js"),
+      utils: path.join(project_dir,"myCompany/static/js/utils.js")
     }
   },
 

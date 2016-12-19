@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {Cookie, UrlParser} from './../../js/utils.js';
+import {Cookie, UrlParser} from 'utils';
 
 export class Auth extends React.Component{
 
