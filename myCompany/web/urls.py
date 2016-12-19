@@ -12,4 +12,6 @@ urlpatterns = [
 
     url(r'^employee/$', views.Employees.as_view(), name="employee_list"),
     url(r'^employee/(?P<record_id>\d+)/$', views.Employees.as_view(), name="employee_detail"),
+
+    url(r'^login/$', views.Login.as_view(), name="employee_list"),
 ]

@@ -22,7 +22,7 @@ from web.views import ApiScheme
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('django.contrib.auth.urls')),
+    url(r'', include('web.urls')),
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^api/$', ApiScheme.as_view(), name="menu_list"),
@@ -31,5 +31,5 @@ urlpatterns = [
     url(r'^api/', include('events.urls')),
     url(r'^api/', include('employee.urls')),
     url(r'^api/', include('users.urls')),
-    url(r'', include('web.urls')),
+    url(r'', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

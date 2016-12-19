@@ -41,23 +41,16 @@
 
       </div>
       </li>
-      <!-- <li id="user-menu" class="is-dropdown-submenu-parent">
-        {% if request.user.is_authenticated %}
+      <li id="user-menu" class="is-dropdown-submenu-parent">
         <a href="#">
           <i class="fi-list"></i>
           {{ request.user.email }}
         </a>
-        {% else %}
-        <a href="#">
-          <i class="fi-list"></i>
-          <span>Menu</span>
-        </a>
-        {% endif %}
         <ul class="menu">
           <li><a href="#">{% trans 'Settings' %}</a></li>
-          <li><a href="#">{% trans 'Logout' %}</a></li>
+          <li><a href="{% url 'logout' %}?next=/">{% trans 'Logout' %}</a></li>
         </ul>
-      </li> -->
+      </li>
     </ul>
   </div>
   </div>
