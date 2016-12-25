@@ -4,6 +4,8 @@ from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from rest_framework import status
 from rest_framework.response import Response
 
+from users.serializers import ResetPasswordSerializer
+
 class Login(APIView):
 
     def post(self, request):
@@ -14,3 +16,14 @@ class Login(APIView):
             login(request, user)
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+class ResetPassword(APIView):
+
+    serializer_classes = ResetPasswordSerializer
+
+    def put(self, request):
+        serializer = ResetPasswordSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.save()
+        return Response({}, status=status.HTTP_202_ACCEPTED)

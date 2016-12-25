@@ -7,3 +7,7 @@ class Login(TemplateView):
 class Registration(TemplateView):
 
     template_name = "users/auth.html"
+
+class ResetPassword(TemplateView):
+
+    template_name = "users/auth.html"

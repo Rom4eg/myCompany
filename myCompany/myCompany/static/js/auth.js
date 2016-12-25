@@ -6,10 +6,13 @@ import ReactDom from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 import { Auth } from './../components/user/auth.jsx';
 import { Registration } from './../components/user/register.jsx';
+import { ResetPassword } from './../components/user/reset_password.jsx';
 
+console.log(ResetPassword)
 ReactDom.render((
   <Router history={browserHistory}>
     <Route path="/login/" component={Auth} />
     <Route path="/register/" component={Registration} />
+    <Route path="/reset-password/" component={ResetPassword} />
   </Router>
 ), document.getElementById('auth'))

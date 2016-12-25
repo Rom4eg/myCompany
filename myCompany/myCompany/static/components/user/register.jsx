@@ -73,7 +73,7 @@ export class Registration extends React.Component{
               <div className="footer medium-8 medium-offset-2 columns">
                 <div className="row align-middle">
                   <div className="medium-6 columns">
-                    <button type="button" onClick={browserHistory.goBack}>{gettext("Login")}</button>
+                    <button type="button" onClick={browserHistory.goBack}>{gettext("Back")}</button>
                   </div>
                   <div className="medium-6 columns text-right">
                     <input type="submit" disabled={!this.state.is_active} className="button" value={gettext('Login')}></input>
