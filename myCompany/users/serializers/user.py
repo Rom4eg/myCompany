@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.ModelSerializer):
 
     is_authenticated = serializers.BooleanField()
+    email = serializers.EmailField()
 
     class Meta:
         model = User
