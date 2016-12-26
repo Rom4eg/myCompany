@@ -11,3 +11,6 @@ class Registration(TemplateView):
 class ResetPassword(TemplateView):
 
     template_name = "users/auth.html"
+
+    def get(self, request):
+        print(request)
