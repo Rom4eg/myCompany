@@ -14,3 +14,4 @@ class ResetPassword(TemplateView):
 
     def get(self, request):
         print(request)
+        return super(ResetPassword, self).get(request)

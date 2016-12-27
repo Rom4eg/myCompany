@@ -8,7 +8,6 @@ import { Auth } from './../components/user/auth.jsx';
 import { Registration } from './../components/user/register.jsx';
 import { ResetPassword } from './../components/user/reset_password.jsx';
 
-console.log(ResetPassword)
 ReactDom.render((
   <Router history={browserHistory}>
     <Route path="/login/" component={Auth} />

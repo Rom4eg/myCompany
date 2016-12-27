@@ -144,8 +144,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'mail@example.com'
 EMAIL_HOST_PASSWORD = 'SeCrEt!!1'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste,searchreplace,fullpage",
