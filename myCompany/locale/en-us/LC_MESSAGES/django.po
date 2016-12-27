@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 19:19+0000\n"
+"POT-Creation-Date: 2016-12-27 20:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,40 +21,44 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: employee/models/employee.py:10
-msgid "Email"
+#: employee/models/employee.py:13
+msgid "User icon"
 msgstr ""
 
-#: employee/models/employee.py:11 rules/models/rule.py:12
+#: employee/models/employee.py:14 rules/models/rule.py:14
+#: users/models/reset_pwd.py:9
 msgid "User"
 msgstr ""
 
-#: employee/models/employee.py:12
+#: employee/models/employee.py:15
 msgid "Department"
 msgstr ""
 
-#: employee/models/employee.py:13
+#: employee/models/employee.py:16
+msgid "Company"
+msgstr ""
+
+#: employee/models/employee.py:17
 msgid "First Name"
 msgstr ""
 
-#: employee/models/employee.py:14
+#: employee/models/employee.py:18
 msgid "Last Name"
 msgstr ""
 
-#: employee/models/employee.py:15
+#: employee/models/employee.py:19
 msgid "Middle Name"
 msgstr ""
 
+#: employee/models/employee.py:20
+msgid "Phone primary"
+msgstr ""
+
 #: employee/models/employee.py:21
-msgid "We have a new Employee"
+msgid "Phone secondary"
 msgstr ""
 
-#: employee/models/employee.py:24
-#, python-format
-msgid "We have a new employee, %s"
-msgstr ""
-
-#: events/models/comment.py:9 events/models/event.py:14 rules/models/rule.py:13
+#: events/models/comment.py:9 events/models/event.py:15 rules/models/rule.py:15
 msgid "Author"
 msgstr ""
 
@@ -66,55 +70,59 @@ msgstr ""
 msgid "Event"
 msgstr ""
 
-#: events/models/comment.py:12 events/models/event.py:15
-#: rules/models/rule.py:14
+#: events/models/comment.py:12 events/models/event.py:16
+#: rules/models/rule.py:16 users/models/reset_pwd.py:7
 msgid "Create date"
 msgstr ""
 
-#: events/models/event.py:11 rules/models/rule.py:10
+#: events/models/event.py:12 rules/models/rule.py:12
 msgid "Title"
 msgstr ""
 
-#: events/models/event.py:12
+#: events/models/event.py:13
 msgid "Event content"
 msgstr ""
 
-#: events/models/event.py:13
+#: events/models/event.py:14
 msgid "Subscribers"
 msgstr ""
 
-#: events/models/event.py:16
+#: events/models/event.py:17
 msgid "Start date"
 msgstr ""
 
-#: events/models/event.py:17
+#: events/models/event.py:18
 msgid "End date"
 msgstr ""
 
-#: myCompany/templates/header.html:16
+#: myCompany/templates/header.html:21
 msgid "Dashboard"
 msgstr ""
 
-#: myCompany/templates/header.html:21
+#: myCompany/templates/header.html:26
 msgid "Rules"
 msgstr ""
 
-#: myCompany/templates/header.html:26
+#: myCompany/templates/header.html:31
 msgid "Events"
 msgstr ""
 
-#: myCompany/templates/header.html:31
+#: myCompany/templates/header.html:36
 msgid "Employees"
 msgstr ""
 
-#: myCompany/templates/header.html:47
+#: myCompany/templates/header.html:50
 msgid "Settings"
 msgstr ""
 
-#: myCompany/templates/header.html:48
+#: myCompany/templates/header.html:51
 msgid "Logout"
 msgstr ""
 
-#: rules/models/rule.py:11
+#: rules/models/rule.py:13
 msgid "Rule content"
+msgstr ""
+
+#: users/models/reset_pwd.py:8
+msgid "Hash"
 msgstr ""
