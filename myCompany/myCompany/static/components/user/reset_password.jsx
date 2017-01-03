@@ -7,7 +7,8 @@ export class ResetPassword extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      is_active: true
+      is_active: true,
+      subtitle: ""
     }
     this.cookie = new Cookie();
     this.urlParser = new UrlParser();
@@ -25,9 +26,19 @@ export class ResetPassword extends React.Component{
         jqXHR.setRequestHeader("x-csrftoken", this.cookie.getName('csrftoken'));
       }
     }).then((resp, code)=>{
-      console.log(arguments);
-    }, ()=>{
-      console.log(arguments);
+      this.setState({
+        subtitle: gettext("Message was sent to email. Please follow instructions in message.")
+      })
+      resetForm.email.value = "";
+    }, (resp)=>{
+      var rest_txt = JSON.parse(resp.responseText);
+      for(let field in rest_txt){
+        var err_detail = rest_txt[field];
+        $(resetForm[field]).parents(".columns").addClass('error').attr('title', err_detail);
+      }
+      this.setState({
+        subtitle: gettext("Error while processing form.")
+      })
     })
   }
 
@@ -40,6 +51,9 @@ export class ResetPassword extends React.Component{
               <div className="row">
                 <div className="title medium-10 medium-offset-1 columns">
                   <h3 className="text-center">{gettext("MyCompany. Reset password.")}</h3>
+                </div>
+                <div className="subtitle medium-10 medium-offset-1 columns">
+                  <h5 className="text-center">{this.state.subtitle}</h5>
                 </div>
                 <div className="medium-8 medium-offset-2 columns">
                   <label>

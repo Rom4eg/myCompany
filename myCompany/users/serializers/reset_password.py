@@ -14,6 +14,13 @@ from users.models import ResetPassword
 class ResetPasswordSerializer(serializers.ModelSerializer):
     email = serializers.EmailField()
 
+    def validate(self, data):
+        try:
+            User.objects.get(email=data.get('email'))
+        except ObjectDoesNotExist as err:
+            raise serializers.ValidationError({"email": "No such Email."})
+        return data
+
     def update(self, inst, data):
         self.user = User.objects.filter(email=data.get('email')).first()
         pwd_hash = self.__gethash()
@@ -55,7 +62,7 @@ class UpdatePasswordSerializer(serializers.Serializer):
         try:
             reset_hash = ResetPassword.objects.get(pwd_hash=data.get('reset_hash'))
         except Exception as err:
-            raise serializers.ValidationError({'retape_password': 'Incorrect or corrupted hash summ.'})
+            raise serializers.ValidationError({'reset_hash': 'Incorrect or corrupted hash summ.'})
         # del data['retape_password']
         # del data['reset_hash']
         return data
