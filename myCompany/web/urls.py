@@ -15,6 +15,6 @@ urlpatterns = [
 
     url(r'^login/$', views.Login.as_view(), name="login_view"),
     url(r'^register/$', views.Registration.as_view(), name="register_view"),
-    url(r'^reset-password/$', views.ResetPwd.as_view(), name="reset_password"),
+    url(r'^reset-password/$', views.ResetPwd.as_view(), name="reset_password_view"),
     url(r'^reset-confirm/(?P<reset_hash>\w+)/$', views.ResetPwd.as_view(), name="reset_confirm"),
 ]

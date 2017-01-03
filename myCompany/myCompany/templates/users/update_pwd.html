@@ -1,11 +1,14 @@
-{% load i18n %}
+{% load i18n staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% trans 'Yellow Password' %}</title>
+    <title>{% trans 'Yellow. Update Password' %}</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
   </head>
   <body>
-    
+    <div id="auth" class="row"></div>
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+    <script type="text/javascript" src="{% static 'js/auth.js' %}"></script>
   </body>
 </html>

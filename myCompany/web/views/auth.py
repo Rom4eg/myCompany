@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
+from django.http.response import HttpResponseRedirect
+from django.urls import reverse
 from users.models import ResetPassword
 
 
@@ -18,12 +20,10 @@ class ResetPwd(TemplateView):
 
     def get(self, request, reset_hash=None):
         if not reset_hash:
-            return super(ResetPassword, self).get(request)
+            return super(ResetPwd, self).get(request)
         try:
             pwd_hash = ResetPassword.objects.get(pwd_hash=reset_hash)
+            self.template_name = "users/update_pwd.html"
         except ObjectDoesNotExist as err:
-            return super(ResetPassword, self).get(request)
-        return render_to_response("users/update_pwd.html", {"request": request, "user": pwd_hash.user})
-
-    def put(self, request):
-        pass
+            return HttpResponseRedirect(reverse('reset_password_view'))
+        return render_to_response(self.template_name, {"request": request, "user": pwd_hash.user})
