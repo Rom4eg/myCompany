@@ -7,5 +7,6 @@ public
 **/build/**/*.js
 **/build/**/*.css
 **/build/**/*.ttf
+**/build/**/*.svg
 **/locale/**/*.mo
 **/media/user_*

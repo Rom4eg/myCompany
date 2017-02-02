@@ -7,3 +7,38 @@
 body
   font-family: "Roboto"
   font-size: 1em
+  &>.wrapper
+    min-height: 100%
+    position: relative
+    &>section
+      padding-bottom: 4em
+
+a
+  color: $blue_grey_600
+  &:hover, &:focus
+    color: $blue_grey_800
+
+
+header
+  &.top-bar, &.top-bar ul
+    background-color: $blue_grey_200
+    .menu
+      .active
+        & > a
+          background-color: $blue_grey_300
+    .dropdown.menu
+      & > li.is-dropdown-submenu-parent
+        & > a::after
+          border-color: $grey_200 transparent transparent
+
+footer
+  position: absolute
+  bottom: 0px
+  padding: .7rem
+  background: $blue_grey_200
+  font-size: .7rem
+  color: $grey_300
+  left: 0px
+  right: 0px
+  .container
+    text-align: center
