@@ -6,6 +6,7 @@ const project_dir = path.join(base_dir, 'myCompany');
 let webpack = require("webpack");
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   context: path.join(project_dir, "myCompany/static/js/"),
   entry: {
@@ -24,6 +25,10 @@ module.exports = {
     root: path.join(base_dir, 'node_modules')
   },
 
+  resolveUrlLoader: {
+    root: path.join(base_dir, 'node_modules/foundation-icons')
+  },
+
   watch: true,
   resolve:{
     extensions: ['', '.js', '.sass'],
@@ -40,9 +45,12 @@ module.exports = {
       exclude: /(node_modules)/,
       loader: 'babel'
     },{
-      test: /\.sass$/,
+      test: /\.(sass|scss)$/,
       exclude:/(node_modules)/,
-      loader: ExtractTextPlugin.extract('style-loader', "css-loader!sass-loader")
+      loader: ExtractTextPlugin.extract('style-loader', ["css-loader", "sass-loader"])
+    },{
+      test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'url-loader?limit=100000'
     }]
   },
 

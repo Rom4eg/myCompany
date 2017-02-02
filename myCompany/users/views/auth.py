@@ -34,5 +34,6 @@ class ResetPassword(APIView):
         serializer = UpdatePasswordSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        serializer.update(serializer, serializer.data)
+        user = serializer.update(serializer, serializer.data)
+        login(request, user)
         return Response({}, status=status.HTTP_200_OK)

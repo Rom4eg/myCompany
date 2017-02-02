@@ -29,6 +29,10 @@ export class UpdatePassword extends React.Component{
       beforeSend: (jqXHR, settings) => {
         jqXHR.setRequestHeader("x-csrftoken", this.cookie.getName('csrftoken'));
       }
+    }).then(()=>{
+      window.location = this.urlParser.getParam('next', '/');
+    },(resp)=>{
+      console.log(resp);
     })
   }
 

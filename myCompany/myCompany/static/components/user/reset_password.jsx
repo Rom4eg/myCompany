@@ -29,6 +29,9 @@ export class ResetPassword extends React.Component{
       this.setState({
         subtitle: gettext("Message was sent to email. Please follow instructions in message.")
       })
+      setTimeout(()=>{
+        browserHistory.push('/login/');
+      }, (15*1000));
       resetForm.email.value = "";
     }, (resp)=>{
       var rest_txt = JSON.parse(resp.responseText);
@@ -66,7 +69,7 @@ export class ResetPassword extends React.Component{
                       <button type="button" onClick={browserHistory.goBack}>{gettext("Back")}</button>
                     </div>
                     <div className="medium-6 columns text-right">
-                      <input type="submit" disabled={!this.state.is_active} className="button" value={gettext('Login')}></input>
+                      <input type="submit" disabled={!this.state.is_active} className="button" value={gettext('Continue')}></input>
                     </div>
                   </div>
                 </div>

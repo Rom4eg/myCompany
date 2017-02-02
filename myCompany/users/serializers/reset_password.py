@@ -71,4 +71,6 @@ class UpdatePasswordSerializer(serializers.Serializer):
         hash_inst = ResetPassword.objects.filter(pwd_hash=data.get('reset_hash')).first()
         hash_inst.user.set_password(data.get('password'))
         hash_inst.user.save()
+        user = hash_inst.user
         hash_inst.delete()
+        return user

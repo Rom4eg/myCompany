@@ -7,7 +7,8 @@ export class Auth extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      is_active: true
+      is_active: true,
+      incorrect_login_pass: false
     }
     this.cookie = new Cookie();
     this.urlParser = new UrlParser();
@@ -29,15 +30,20 @@ export class Auth extends React.Component{
       },
     }).then((resp, code)=>{
       window.location = this.urlParser.getParam("next", "/");
+      this.setState({
+        incorrect_login_pass: false
+      })
     }, ()=>{
-      console.log(arguments)
+      this.setState({
+        incorrect_login_pass: true
+      })
     })
   }
 
   render(){
     return (
       <div className="root">
-        <form action="/api/login/" method="post" onSubmit={(e)=>{this.login(e)}} >
+        <form data-abide action="/api/login/" method="post" onSubmit={(e)=>{this.login(e)}} >
           <div className="row align-middle">
             <div className="medium-6 medium-offset-3 columns">
               <div className="row">
@@ -45,13 +51,24 @@ export class Auth extends React.Component{
                   <h3 className="text-center">{gettext("Yellow pages. MyCompany.")}</h3>
                 </div>
                 <div className="medium-8 medium-offset-2 columns">
+                  <div className={this.state.incorrect_login_pass? 'alert callout': 'hide'}>
+                    <p><i className="fi-alert"></i> Incorrect email or password.</p>
+                  </div>
+                </div>
+                <div className="medium-8 medium-offset-2 columns">
                   <label>
-                    <input type="text" name="username" disabled={!this.state.is_active} placeholder="Login or Email"/>
+                    <input type="text" name="username" disabled={!this.state.is_active} placeholder="Login or Email" required/>
+                    <span className="form-error">
+                      {gettext("Login or email required.")}
+                    </span>
                   </label>
                 </div>
                 <div className="medium-8 medium-offset-2 columns">
                   <label>
-                    <input type="password" disabled={!this.state.is_active} name="password" placeholder="Password"/>
+                    <input type="password" disabled={!this.state.is_active} name="password" placeholder="Password" required/>
+                    <span className="form-error">
+                      {gettext("Password is required.")}
+                    </span>
                   </label>
                 </div>
                 <div className="footer medium-8 medium-offset-2 columns">
